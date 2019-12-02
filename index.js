@@ -14,7 +14,7 @@ router.post('/user',ctx=>{
         msg:"上传成功"
     }:{
         code:404,
-        msg:"name与eamil不得为空"
+        msg:"name与email不得为空"
     }:{
         code:401,
         msg:"unauthorized post"
