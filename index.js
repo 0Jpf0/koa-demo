@@ -6,11 +6,11 @@ const router=new Router();
 app.use(Body());
 router.prefix('/api')
 router.post('/user',ctx=>{
-    let name=JSON.parse(ctx.request.body).name;
-    let email=JSON.parse(ctx.request.body).email;
+    let name=ctx.request.body.name;
+    let email=ctx.request.body.email;
     ctx.body=ctx.header.hasOwnProperty('role')&&ctx.header.role==='admin'?name&&email?{
         code:200,
-        data:JSON.parse(ctx.request.body),
+        data:ctx.request.body,
         msg:"上传成功"
     }:{
         code:404,
